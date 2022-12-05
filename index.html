@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="zonder-tong" src="./assets/zonder_tong.obj"></a-asset-item>
+        <a-asset-item id="zonder-tong-upper" src="./assets/upperjaw.obj"></a-asset-item>
+        <a-asset-item id="zonder-tong-lower" src="./assets/lowerjaw.obj"></a-asset-item>
+      </a-assets>
+
+      <!-- Controls for oculus -->
+      <a-entity>
+        <a-camera></a-camera>
+        <a-entity sphere-collider="objects: a-obj-model" super-hands hand-controls="hand: left"></a-entity>
+        <a-entity sphere-collider="objects: a-obj-model" super-hands hand-controls="hand: right"></a-entity>
+      </a-entity>
+
+      <!-- <a-box position="-1 0.5 1" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
+      <!-- <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane> -->
+      <!-- <a-obj-model position="0.5 1 0" animation="property: position; to: 1 0 5; dur: 2000; easing: linear; loop: true" rotation="0 -90 0" src="#zonder-tong" color="#4CC3D9"></a-obj-model> -->
+      <a-obj-model hoverable grabbable stretchable draggable dropppable position="0.5 1.5 0" rotation="0 -90 0" src="#zonder-tong-upper" color="#4CC3D9"></a-obj-model>
+      <a-obj-model hoverable grabbable stretchable draggable dropppable position="0.5 1.5 0" rotation="0 -90 0" src="#zonder-tong-lower" color="#FFC65D"></a-obj-model>
+
+      <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"
+      event-set__enter="_event: mouseenter; color: #8FF7FF"
+      event-set__leave="_event: mouseleave; color: #4CC3D9"></a-box> -->
+
+      
+      <!-- <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera> -->
+      
+      <!-- <a-sky color="#ECECEC"></a-sky> -->
+
+      <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
+      <!-- <a-box hoverable grabbable stretchable draggable dropppable color="blue" position="0 0 1"></a-box> -->
+      <!-- <a-box hoverable grabbable stretchable draggable dropppable color="red" position="0 1 1"></a-box> -->
+    </a-scene>
+  </body>
+</html>
